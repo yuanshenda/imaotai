@@ -290,8 +290,10 @@ if __name__ == '__main__':
                 for itemCode in itemCodes:
                     name = res_map.get(str(itemCode))
                     if name:
-                        shop_id = get_shop_item(
-                            sessionId, itemCode, device_id, token, province, city)
+                        # 可以默认门店为131310107007(附近)
+                        shop_id=131310107007
+                        #shop_id = get_shop_item(
+                        #   sessionId, itemCode, device_id, token, province, city)
                         res = mt_add(itemCode, str(shop_id), sessionId,
                                      user_id, token, device_id)
                         s += itemCode + \
